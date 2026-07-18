@@ -14,16 +14,16 @@ const Main=()=>{
 
     const pokeFun= useCallback(() => {
         setLoading(true)
-        const res=await axios.get(url);
+        const res= axios.get(url);
         setNextUrl(res.data.next);
         setPrevUrl(res.data.previous);
         getPokemon(res.data.results)
         setLoading(false)
     }, [url]);
-    
+
     const getPokemon=async(res)=>{
-       res.map(async(item)=>{
-          const result=await axios.get(item.url)
+       res.map((item)=>{
+          const result= axios.get(item.url)
           setPokeData(state=>{
               state=[...state,result.data]
               state.sort((a,b)=>a.id>b.id?1:-1)
