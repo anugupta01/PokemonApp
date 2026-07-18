@@ -12,14 +12,15 @@ const Main=()=>{
     const [prevUrl,setPrevUrl]=useState();
     const [pokeDex,setPokeDex]=useState();
 
-    const pokeFun=async()=>{
+    const pokeFun= useCallback(() => {
         setLoading(true)
         const res=await axios.get(url);
         setNextUrl(res.data.next);
         setPrevUrl(res.data.previous);
         getPokemon(res.data.results)
         setLoading(false)
-    }
+    }, [url]);
+    
     const getPokemon=async(res)=>{
        res.map(async(item)=>{
           const result=await axios.get(item.url)
