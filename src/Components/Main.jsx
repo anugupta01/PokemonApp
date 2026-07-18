@@ -32,7 +32,7 @@ const Main=()=>{
     }
     useEffect(()=>{
         pokeFun();
-    },[url])
+    },[url, pokeFun])
     return(
         <>
             <div className="container">
