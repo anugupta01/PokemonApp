@@ -1,4 +1,4 @@
-# Getting Started with Create Pokemon App based upon React 19.2.7
+# Pokemon App based upon React 19.2.7
 
 This project was bootstrapped with [Create Pokemon App](https://github.com/anugupta01/PokemonApp).
 
